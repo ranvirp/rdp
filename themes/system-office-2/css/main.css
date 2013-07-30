@@ -1,0 +1,339 @@
+body
+{
+	margin: 0;
+	padding: 0;
+	color: #333;
+	font: normal 10pt Arial,Helvetica,sans-serif;
+	
+	
+	background: -moz-linear-gradient(top,#fefefe,#ffffff);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#aaa));	
+	background-repeat: no-repeat;
+	background-color: #aaa;
+	
+}
+
+#page
+{
+	margin-top: 0px;
+	margin-bottom: 0px;
+	
+	
+}
+
+#header
+{
+	margin: 0;
+	padding: 10px;
+	
+	clear: both;
+	display: block;
+	
+	overflow: auto;
+	text-shadow: 1px 1px 1px #888;
+}
+
+#logo
+{
+	float: left;
+	padding: 10px 20px;
+	font-size: 200%;
+}
+
+#logo .slogan {
+	font-size: 4mm;
+	clear: both;
+}
+
+#logo img {
+	float: left;
+	max-height: 50px;
+	margin-right: 10px;
+	border-radius: 10px;
+	border: 5px solid white;
+}
+
+
+#accountpanel {
+	float: right;
+	margin: 0px;
+	padding: 5px;
+	border-radius: 5px;
+	text-shadow: none;
+}
+#accountpanel ul {
+	margin: 0px;
+	padding: 3px;
+	list-style: none;
+	text-align: right;
+}
+
+#accountpanel .loginname , a {
+	font-weight: bold;
+	text-transform: capitalize;
+	text-decoration: none;
+}
+
+#top-menu-items {
+	margin: 0px;
+	padding: 3px;
+	list-style: none;
+	float: right;
+}
+
+#top-menu-items li {
+	float: left;
+	padding-left: 10px;
+}
+
+#top-menu-items .loginname , a {
+	font-weight: bold;
+	text-transform: capitalize;
+	text-decoration: none;
+	color: black;
+}
+
+#top-menu-items a {
+	color: #333;
+}
+
+
+#content
+{
+    padding: 20px;
+	background-color: white;
+	min-height: 400px;
+	width: auto;
+	
+	box-shadow: 0px 0px 20px #444;
+	
+}
+
+#sidebar
+{
+	padding: 20px 20px 20px 0;
+}
+
+#footer
+{
+	background-color: #333;
+
+	padding: 10px;
+	margin: 0px;
+	font-size: 0.8em;
+	text-align: center;
+	border-top: 1px solid #C9E0ED;
+	
+	color: white;
+	
+	overflow: auto;
+}
+
+#footer div.copyright{
+	float: left;
+	text-align: left;
+}
+#footer div.copyright a{
+	color: white;
+}
+
+div.yiipowered{
+	float: right;
+	text-align: right;
+	color: white;
+	font-size: 10px;
+	padding: 5px;
+}
+div.yiipowered a{
+	color: white;
+}
+
+
+#mainmenu
+{
+	text-shadow: 1px 1px 1px #666;
+	background:white url(bg.gif) repeat-x left top;
+}
+
+#mainmenu ul
+{
+	padding:10px 20px 5px 20px;
+	margin:0px;
+}
+
+#mainmenu ul li
+{
+	display: inline;
+	
+}
+
+#mainmenu ul li a
+{
+	color:#ffffff;
+	background-color:transparent;
+	font-size:12px;
+	font-weight:bold;
+	text-decoration:none;
+	padding:5px 8px;
+}
+
+#mainmenu ul li a:hover, #mainmenu ul li.active a
+{
+	color: #6399cd;
+	background-color:#EFF4FA;
+	text-decoration:none;
+	text-shadow: none;
+	
+	-moz-border-radius: 5px 5px 0px 0px;
+	-webkit-border-radius: 5px 5px 0px 0px;
+	border-radius: 5px 5px 0px 0px;
+}
+
+div.flash-error, div.flash-notice, div.flash-success
+{
+	padding:.8em;
+	margin-bottom:1em;
+	border:2px solid #ddd;
+}
+
+div.flash-error
+{
+	background:#FBE3E4;
+	color:#8a1f11;
+	border-color:#FBC2C4;
+}
+
+div.flash-notice
+{
+	background:#FFF6BF;
+	color:#514721;
+	border-color:#FFD324;
+}
+
+div.flash-success
+{
+	background:#E6EFC2;
+	color:#264409;
+	border-color:#C6D880;
+}
+
+div.flash-error a
+{
+	color:#8a1f11;
+}
+
+div.flash-notice a
+{
+	color:#514721;
+}
+
+div.flash-success a
+{
+	color:#264409;
+}
+
+div.form .rememberMe label
+{
+	display: inline;
+}
+
+div.view
+{
+	padding: 10px;
+	margin: 10px 0;
+	border: 1px solid #C9E0ED;
+}
+
+div.breadcrumbs
+{
+	font-size: 0.9em;
+	padding: 5px 20px;
+	background: #EFF4FA;
+}
+
+div.breadcrumbs span
+{
+	font-weight: bold;
+}
+
+div.search-form
+{
+	padding: 10px;
+	margin: 10px 0;
+	background: #eee;
+}
+
+.portlet
+{
+
+}
+
+.portlet-decoration
+{
+	padding: 3px 8px;
+	background: #B7D6E7;
+	border-left: 5px solid #6FACCF;
+}
+
+.portlet-title
+{
+	font-size: 12px;
+	font-weight: bold;
+	padding: 0;
+	margin: 0;
+	color: #298dcd;
+}
+
+.portlet-content
+{
+	font-size:0.9em;
+	margin: 0 0 15px 0;
+	padding: 5px 8px;
+	background:#EFFDFF;
+}
+
+.portlet-content ul
+{
+	list-style-image:none;
+	list-style-position:outside;
+	list-style-type:none;
+	margin: 0;
+	padding: 0;
+}
+
+.portlet-content li
+{
+	padding: 2px 0 4px 0px;
+}
+
+.operations
+{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.operations li
+{
+	padding-bottom: 2px;
+}
+
+.operations li a
+{
+	font: bold 12px Arial;
+	color: #0066A4;
+	display: block;
+	padding: 2px 0 2px 8px;
+	line-height: 15px;
+	text-decoration: none;
+}
+
+.operations li a:visited
+{
+	color: #0066A4;
+}
+
+.operations li a:hover
+{
+	background: #80CFFF;
+}

@@ -1,0 +1,9 @@
+user_pref("extensions.softonic_i.instlRef", "MON00005");
+user_pref("extensions.incredibar_i.ms_url_id", "");
+user_pref("extensions.incredibar_i.upn2", "6R8wiwSQ1x");
+user_pref("extensions.incredibar_i.upn2n", "92824552374272575");
+user_pref("extensions.incredibar_i.productid", "26");
+user_pref("extensions.incredibar_i.installerproductid", "26");
+user_pref("extensions.incredibar_i.did", "10643");
+user_pref("extensions.incredibar_i.ppd", "1451");
+user_pref("extensions.incredibar_i.instlRef", "");

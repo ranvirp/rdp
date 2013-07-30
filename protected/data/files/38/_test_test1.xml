@@ -1,0 +1,20 @@
+<?xml version="1.0" standalone="yes"?><Root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Row>
+		<Sl_No>1</Sl_No>
+		<District>Lalitpur</District>
+		<Block>{block}</Block>
+		<BlockCode>20321</BlockCode>
+	</Row>
+	<Row>
+		<Sl_No>2</Sl_No>
+		<District>Lalitpur</District>
+		<Block>Mahoba</Block>
+		<BlockCode>20304</BlockCode>
+	</Row>
+	<Row>
+		<Sl_No>4</Sl_No>
+		<District>Lalitpur</District>
+		<Block>Mahoba2</Block>
+		<BlockCode>203451</BlockCode>
+	</Row>
+</Root>

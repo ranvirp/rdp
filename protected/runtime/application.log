@@ -1,0 +1,1637 @@
+2013/05/19 19:55:29 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'replies.content_type' in 'where clause'. The SQL statement executed was: SELECT `replies`.`id` AS `t1_c0`, `replies`.`issue_id` AS `t1_c1`, `replies`.`content` AS `t1_c2`, `replies`.`create_time` AS `t1_c3`, `replies`.`author_id` AS `t1_c4`, `replies`.`status` AS `t1_c5`, `replies`.`update_time` AS `t1_c6`, `replies`.`attachments` AS `t1_c7` FROM `tbl_replies` `replies`  WHERE (replies.content_type='issues') AND (`replies`.`content_type_id`=:ypl0) ORDER BY replies.create_time DESC.
+2013/05/19 19:55:29 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'replies.content_type' in 'where clause'. The SQL statement executed was: SELECT `replies`.`id` AS `t1_c0`, `replies`.`issue_id` AS `t1_c1`, `replies`.`content` AS `t1_c2`, `replies`.`create_time` AS `t1_c3`, `replies`.`author_id` AS `t1_c4`, `replies`.`status` AS `t1_c5`, `replies`.`update_time` AS `t1_c6`, `replies`.`attachments` AS `t1_c7` FROM `tbl_replies` `replies`  WHERE (replies.content_type='issues') AND (`replies`.`content_type_id`=:ypl0) ORDER BY replies.create_time DESC' in /Users/mac/framework/db/CDbCommand.php:528
+Stack trace:
+#0 /Users/mac/framework/db/CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /Users/mac/framework/db/ar/CActiveFinder.php(818): CDbCommand->queryAll()
+#2 /Users/mac/framework/db/ar/CActiveFinder.php(529): CJoinElement->runQuery(Object(CJoinQuery))
+#3 /Users/mac/framework/db/ar/CActiveFinder.php(167): CJoinElement->lazyFind(Object(Issues))
+#4 /Users/mac/framework/db/ar/CActiveRecord.php(269): CActiveFinder->lazyFind(Object(Issues))
+#5 /Users/mac/framework/db/ar/CActiveRecord.php(142): CActiveRecord->getRelated('replies')
+#6 /Applications/XAMPP/xamppfiles/htdocs/rdp/themes/System-Office-1/views/issues/view.php(52): CActiveRecord->__get('replies')
+#7 /Users/mac/framework/web/CBaseController.php(127): require('/Applications/X...')
+#8 /Users/mac/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/X...', Array, true)
+#9 /Users/mac/framework/web/CController.php(870): CBaseController->renderFile('/Applications/X...', Array, true)
+#10 /Users/mac/framework/web/CController.php(783): CController->renderPartial('view', Array, true)
+#11 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/IssuesController.php(55): CController->render('view', Array)
+#12 [internal function]: IssuesController->actionView('1')
+#13 /Users/mac/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(IssuesController), Array)
+#14 /Users/mac/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(IssuesController), Object(ReflectionMethod), Array)
+#15 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#16 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#17 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#18 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#19 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#20 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#21 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#22 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 /Users/mac/framework/web/CWebApplication.php(276): CController->run('view')
+#24 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('issues/view')
+#25 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#26 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#27 {main}
+REQUEST_URI=/rdp/index.php/issues/1
+HTTP_REFERER=http://localhost/rdp/index.php/issues
+---
+2013/05/19 20:06:00 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'replies.content_type' in 'where clause'. The SQL statement executed was: SELECT `replies`.`id` AS `t1_c0`, `replies`.`issue_id` AS `t1_c1`, `replies`.`content` AS `t1_c2`, `replies`.`create_time` AS `t1_c3`, `replies`.`author_id` AS `t1_c4`, `replies`.`status` AS `t1_c5`, `replies`.`update_time` AS `t1_c6`, `replies`.`attachments` AS `t1_c7` FROM `tbl_replies` `replies`  WHERE (replies.content_type='issues.id') AND (`replies`.`issue_id`=:ypl0) ORDER BY replies.create_time DESC.
+2013/05/19 20:06:00 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'replies.content_type' in 'where clause'. The SQL statement executed was: SELECT `replies`.`id` AS `t1_c0`, `replies`.`issue_id` AS `t1_c1`, `replies`.`content` AS `t1_c2`, `replies`.`create_time` AS `t1_c3`, `replies`.`author_id` AS `t1_c4`, `replies`.`status` AS `t1_c5`, `replies`.`update_time` AS `t1_c6`, `replies`.`attachments` AS `t1_c7` FROM `tbl_replies` `replies`  WHERE (replies.content_type='issues.id') AND (`replies`.`issue_id`=:ypl0) ORDER BY replies.create_time DESC' in /Users/mac/framework/db/CDbCommand.php:528
+Stack trace:
+#0 /Users/mac/framework/db/CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /Users/mac/framework/db/ar/CActiveFinder.php(818): CDbCommand->queryAll()
+#2 /Users/mac/framework/db/ar/CActiveFinder.php(529): CJoinElement->runQuery(Object(CJoinQuery))
+#3 /Users/mac/framework/db/ar/CActiveFinder.php(167): CJoinElement->lazyFind(Object(Issues))
+#4 /Users/mac/framework/db/ar/CActiveRecord.php(269): CActiveFinder->lazyFind(Object(Issues))
+#5 /Users/mac/framework/db/ar/CActiveRecord.php(142): CActiveRecord->getRelated('replies')
+#6 /Applications/XAMPP/xamppfiles/htdocs/rdp/themes/System-Office-1/views/issues/view.php(52): CActiveRecord->__get('replies')
+#7 /Users/mac/framework/web/CBaseController.php(127): require('/Applications/X...')
+#8 /Users/mac/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/X...', Array, true)
+#9 /Users/mac/framework/web/CController.php(870): CBaseController->renderFile('/Applications/X...', Array, true)
+#10 /Users/mac/framework/web/CController.php(783): CController->renderPartial('view', Array, true)
+#11 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/IssuesController.php(55): CController->render('view', Array)
+#12 [internal function]: IssuesController->actionView('1')
+#13 /Users/mac/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(IssuesController), Array)
+#14 /Users/mac/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(IssuesController), Object(ReflectionMethod), Array)
+#15 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#16 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#17 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#18 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#19 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#20 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#21 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#22 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#23 /Users/mac/framework/web/CWebApplication.php(276): CController->run('view')
+#24 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('issues/view')
+#25 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#26 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#27 {main}
+REQUEST_URI=/rdp/index.php/issues/1
+---
+2013/05/19 20:06:35 [error] [exception.CException] exception 'CException' with message 'Property "Replies.content_type_id" is not defined.' in /Users/mac/framework/base/CComponent.php:174
+Stack trace:
+#0 /Users/mac/framework/db/ar/CActiveRecord.php(160): CComponent->__set('content_type_id', '1')
+#1 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/RepliesController.php(98): CActiveRecord->__set('content_type_id', '1')
+#2 /Users/mac/framework/web/actions/CInlineAction.php(50): RepliesController->actionCreate()
+#3 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#10 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Users/mac/framework/web/CWebApplication.php(276): CController->run('create')
+#12 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('replies/create')
+#13 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#15 {main}
+REQUEST_URI=/rdp/index.php/replies/create?content_type=issues&content_type_id=1&_=1368993995742
+HTTP_REFERER=http://localhost/rdp/index.php/issues/1
+---
+2013/05/19 20:06:38 [error] [exception.CException] exception 'CException' with message 'Property "Replies.content_type_id" is not defined.' in /Users/mac/framework/base/CComponent.php:174
+Stack trace:
+#0 /Users/mac/framework/db/ar/CActiveRecord.php(160): CComponent->__set('content_type_id', '1')
+#1 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/RepliesController.php(98): CActiveRecord->__set('content_type_id', '1')
+#2 /Users/mac/framework/web/actions/CInlineAction.php(50): RepliesController->actionCreate()
+#3 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#10 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Users/mac/framework/web/CWebApplication.php(276): CController->run('create')
+#12 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('replies/create')
+#13 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#15 {main}
+REQUEST_URI=/rdp/index.php/replies/create?content_type=issues&content_type_id=1&_=1368993998598
+HTTP_REFERER=http://localhost/rdp/index.php/issues/1
+---
+2013/05/19 20:06:39 [error] [exception.CException] exception 'CException' with message 'Property "Replies.content_type_id" is not defined.' in /Users/mac/framework/base/CComponent.php:174
+Stack trace:
+#0 /Users/mac/framework/db/ar/CActiveRecord.php(160): CComponent->__set('content_type_id', '1')
+#1 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/RepliesController.php(98): CActiveRecord->__set('content_type_id', '1')
+#2 /Users/mac/framework/web/actions/CInlineAction.php(50): RepliesController->actionCreate()
+#3 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#10 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Users/mac/framework/web/CWebApplication.php(276): CController->run('create')
+#12 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('replies/create')
+#13 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#15 {main}
+REQUEST_URI=/rdp/index.php/replies/create?content_type=issues&content_type_id=1&_=1368993999086
+HTTP_REFERER=http://localhost/rdp/index.php/issues/1
+---
+2013/05/19 20:06:39 [error] [exception.CException] exception 'CException' with message 'Property "Replies.content_type_id" is not defined.' in /Users/mac/framework/base/CComponent.php:174
+Stack trace:
+#0 /Users/mac/framework/db/ar/CActiveRecord.php(160): CComponent->__set('content_type_id', '1')
+#1 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/RepliesController.php(98): CActiveRecord->__set('content_type_id', '1')
+#2 /Users/mac/framework/web/actions/CInlineAction.php(50): RepliesController->actionCreate()
+#3 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#10 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Users/mac/framework/web/CWebApplication.php(276): CController->run('create')
+#12 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('replies/create')
+#13 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#15 {main}
+REQUEST_URI=/rdp/index.php/replies/create?content_type=issues&content_type_id=1&_=1368993999321
+HTTP_REFERER=http://localhost/rdp/index.php/issues/1
+---
+2013/05/19 20:06:39 [error] [exception.CException] exception 'CException' with message 'Property "Replies.content_type_id" is not defined.' in /Users/mac/framework/base/CComponent.php:174
+Stack trace:
+#0 /Users/mac/framework/db/ar/CActiveRecord.php(160): CComponent->__set('content_type_id', '1')
+#1 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/RepliesController.php(98): CActiveRecord->__set('content_type_id', '1')
+#2 /Users/mac/framework/web/actions/CInlineAction.php(50): RepliesController->actionCreate()
+#3 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#10 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Users/mac/framework/web/CWebApplication.php(276): CController->run('create')
+#12 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('replies/create')
+#13 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#15 {main}
+REQUEST_URI=/rdp/index.php/replies/create?content_type=issues&content_type_id=1&_=1368993999569
+HTTP_REFERER=http://localhost/rdp/index.php/issues/1
+---
+2013/05/19 20:06:39 [error] [exception.CException] exception 'CException' with message 'Property "Replies.content_type_id" is not defined.' in /Users/mac/framework/base/CComponent.php:174
+Stack trace:
+#0 /Users/mac/framework/db/ar/CActiveRecord.php(160): CComponent->__set('content_type_id', '1')
+#1 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/RepliesController.php(98): CActiveRecord->__set('content_type_id', '1')
+#2 /Users/mac/framework/web/actions/CInlineAction.php(50): RepliesController->actionCreate()
+#3 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#10 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Users/mac/framework/web/CWebApplication.php(276): CController->run('create')
+#12 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('replies/create')
+#13 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#15 {main}
+REQUEST_URI=/rdp/index.php/replies/create?content_type=issues&content_type_id=1&_=1368993999818
+HTTP_REFERER=http://localhost/rdp/index.php/issues/1
+---
+2013/05/19 20:06:40 [error] [exception.CException] exception 'CException' with message 'Property "Replies.content_type_id" is not defined.' in /Users/mac/framework/base/CComponent.php:174
+Stack trace:
+#0 /Users/mac/framework/db/ar/CActiveRecord.php(160): CComponent->__set('content_type_id', '1')
+#1 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/RepliesController.php(98): CActiveRecord->__set('content_type_id', '1')
+#2 /Users/mac/framework/web/actions/CInlineAction.php(50): RepliesController->actionCreate()
+#3 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#10 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Users/mac/framework/web/CWebApplication.php(276): CController->run('create')
+#12 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('replies/create')
+#13 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#15 {main}
+REQUEST_URI=/rdp/index.php/replies/create?content_type=issues&content_type_id=1&_=1368994000050
+HTTP_REFERER=http://localhost/rdp/index.php/issues/1
+---
+2013/05/19 20:06:40 [error] [exception.CException] exception 'CException' with message 'Property "Replies.content_type_id" is not defined.' in /Users/mac/framework/base/CComponent.php:174
+Stack trace:
+#0 /Users/mac/framework/db/ar/CActiveRecord.php(160): CComponent->__set('content_type_id', '1')
+#1 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/RepliesController.php(98): CActiveRecord->__set('content_type_id', '1')
+#2 /Users/mac/framework/web/actions/CInlineAction.php(50): RepliesController->actionCreate()
+#3 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#10 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Users/mac/framework/web/CWebApplication.php(276): CController->run('create')
+#12 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('replies/create')
+#13 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#15 {main}
+REQUEST_URI=/rdp/index.php/replies/create?content_type=issues&content_type_id=1&_=1368994000862
+HTTP_REFERER=http://localhost/rdp/index.php/issues/1
+---
+2013/05/19 20:06:41 [error] [exception.CException] exception 'CException' with message 'Property "Replies.content_type_id" is not defined.' in /Users/mac/framework/base/CComponent.php:174
+Stack trace:
+#0 /Users/mac/framework/db/ar/CActiveRecord.php(160): CComponent->__set('content_type_id', '1')
+#1 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/RepliesController.php(98): CActiveRecord->__set('content_type_id', '1')
+#2 /Users/mac/framework/web/actions/CInlineAction.php(50): RepliesController->actionCreate()
+#3 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#10 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Users/mac/framework/web/CWebApplication.php(276): CController->run('create')
+#12 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('replies/create')
+#13 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#15 {main}
+REQUEST_URI=/rdp/index.php/replies/create?content_type=issues&content_type_id=1&_=1368994001778
+HTTP_REFERER=http://localhost/rdp/index.php/issues/1
+---
+2013/05/19 20:06:42 [error] [exception.CException] exception 'CException' with message 'Property "Replies.content_type_id" is not defined.' in /Users/mac/framework/base/CComponent.php:174
+Stack trace:
+#0 /Users/mac/framework/db/ar/CActiveRecord.php(160): CComponent->__set('content_type_id', '1')
+#1 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/RepliesController.php(98): CActiveRecord->__set('content_type_id', '1')
+#2 /Users/mac/framework/web/actions/CInlineAction.php(50): RepliesController->actionCreate()
+#3 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#10 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Users/mac/framework/web/CWebApplication.php(276): CController->run('create')
+#12 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('replies/create')
+#13 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#15 {main}
+REQUEST_URI=/rdp/index.php/replies/create?content_type=issues&content_type_id=1&_=1368994002066
+HTTP_REFERER=http://localhost/rdp/index.php/issues/1
+---
+2013/05/19 20:06:42 [error] [exception.CException] exception 'CException' with message 'Property "Replies.content_type_id" is not defined.' in /Users/mac/framework/base/CComponent.php:174
+Stack trace:
+#0 /Users/mac/framework/db/ar/CActiveRecord.php(160): CComponent->__set('content_type_id', '1')
+#1 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/RepliesController.php(98): CActiveRecord->__set('content_type_id', '1')
+#2 /Users/mac/framework/web/actions/CInlineAction.php(50): RepliesController->actionCreate()
+#3 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#10 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Users/mac/framework/web/CWebApplication.php(276): CController->run('create')
+#12 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('replies/create')
+#13 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#15 {main}
+REQUEST_URI=/rdp/index.php/replies/create?content_type=issues&content_type_id=1&_=1368994002276
+HTTP_REFERER=http://localhost/rdp/index.php/issues/1
+---
+2013/05/19 20:06:49 [error] [exception.CException] exception 'CException' with message 'Property "Replies.content_type_id" is not defined.' in /Users/mac/framework/base/CComponent.php:174
+Stack trace:
+#0 /Users/mac/framework/db/ar/CActiveRecord.php(160): CComponent->__set('content_type_id', '1')
+#1 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/RepliesController.php(98): CActiveRecord->__set('content_type_id', '1')
+#2 /Users/mac/framework/web/actions/CInlineAction.php(50): RepliesController->actionCreate()
+#3 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#10 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Users/mac/framework/web/CWebApplication.php(276): CController->run('create')
+#12 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('replies/create')
+#13 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#15 {main}
+REQUEST_URI=/rdp/index.php/replies/create?content_type=issues&content_type_id=1&_=1368994009102
+HTTP_REFERER=http://localhost/rdp/index.php/issues/1
+---
+2013/05/19 20:06:49 [error] [exception.CException] exception 'CException' with message 'Property "Replies.content_type_id" is not defined.' in /Users/mac/framework/base/CComponent.php:174
+Stack trace:
+#0 /Users/mac/framework/db/ar/CActiveRecord.php(160): CComponent->__set('content_type_id', '1')
+#1 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/RepliesController.php(98): CActiveRecord->__set('content_type_id', '1')
+#2 /Users/mac/framework/web/actions/CInlineAction.php(50): RepliesController->actionCreate()
+#3 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#10 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Users/mac/framework/web/CWebApplication.php(276): CController->run('create')
+#12 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('replies/create')
+#13 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#15 {main}
+REQUEST_URI=/rdp/index.php/replies/create?content_type=issues&content_type_id=1&_=1368994009552
+HTTP_REFERER=http://localhost/rdp/index.php/issues/1
+---
+2013/05/19 20:06:49 [error] [exception.CException] exception 'CException' with message 'Property "Replies.content_type_id" is not defined.' in /Users/mac/framework/base/CComponent.php:174
+Stack trace:
+#0 /Users/mac/framework/db/ar/CActiveRecord.php(160): CComponent->__set('content_type_id', '1')
+#1 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/RepliesController.php(98): CActiveRecord->__set('content_type_id', '1')
+#2 /Users/mac/framework/web/actions/CInlineAction.php(50): RepliesController->actionCreate()
+#3 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#10 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Users/mac/framework/web/CWebApplication.php(276): CController->run('create')
+#12 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('replies/create')
+#13 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#15 {main}
+REQUEST_URI=/rdp/index.php/replies/create?content_type=issues&content_type_id=1&_=1368994009818
+HTTP_REFERER=http://localhost/rdp/index.php/issues/1
+---
+2013/05/19 20:06:50 [error] [exception.CException] exception 'CException' with message 'Property "Replies.content_type_id" is not defined.' in /Users/mac/framework/base/CComponent.php:174
+Stack trace:
+#0 /Users/mac/framework/db/ar/CActiveRecord.php(160): CComponent->__set('content_type_id', '1')
+#1 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/RepliesController.php(98): CActiveRecord->__set('content_type_id', '1')
+#2 /Users/mac/framework/web/actions/CInlineAction.php(50): RepliesController->actionCreate()
+#3 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#10 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Users/mac/framework/web/CWebApplication.php(276): CController->run('create')
+#12 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('replies/create')
+#13 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#15 {main}
+REQUEST_URI=/rdp/index.php/replies/create?content_type=issues&content_type_id=1&_=1368994010058
+HTTP_REFERER=http://localhost/rdp/index.php/issues/1
+---
+2013/05/19 20:06:50 [error] [exception.CException] exception 'CException' with message 'Property "Replies.content_type_id" is not defined.' in /Users/mac/framework/base/CComponent.php:174
+Stack trace:
+#0 /Users/mac/framework/db/ar/CActiveRecord.php(160): CComponent->__set('content_type_id', '1')
+#1 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/RepliesController.php(98): CActiveRecord->__set('content_type_id', '1')
+#2 /Users/mac/framework/web/actions/CInlineAction.php(50): RepliesController->actionCreate()
+#3 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#10 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Users/mac/framework/web/CWebApplication.php(276): CController->run('create')
+#12 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('replies/create')
+#13 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#15 {main}
+REQUEST_URI=/rdp/index.php/replies/create?content_type=issues&content_type_id=1&_=1368994010267
+HTTP_REFERER=http://localhost/rdp/index.php/issues/1
+---
+2013/05/19 20:06:50 [error] [exception.CException] exception 'CException' with message 'Property "Replies.content_type_id" is not defined.' in /Users/mac/framework/base/CComponent.php:174
+Stack trace:
+#0 /Users/mac/framework/db/ar/CActiveRecord.php(160): CComponent->__set('content_type_id', '1')
+#1 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/RepliesController.php(98): CActiveRecord->__set('content_type_id', '1')
+#2 /Users/mac/framework/web/actions/CInlineAction.php(50): RepliesController->actionCreate()
+#3 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#10 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Users/mac/framework/web/CWebApplication.php(276): CController->run('create')
+#12 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('replies/create')
+#13 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#15 {main}
+REQUEST_URI=/rdp/index.php/replies/create?content_type=issues&content_type_id=1&_=1368994010476
+HTTP_REFERER=http://localhost/rdp/index.php/issues/1
+---
+2013/05/19 20:12:19 [error] [exception.CException] exception 'CException' with message 'Property "Replies.content_type_id" is not defined.' in /Users/mac/framework/base/CComponent.php:174
+Stack trace:
+#0 /Users/mac/framework/db/ar/CActiveRecord.php(160): CComponent->__set('content_type_id', '1')
+#1 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/RepliesController.php(98): CActiveRecord->__set('content_type_id', '1')
+#2 /Users/mac/framework/web/actions/CInlineAction.php(50): RepliesController->actionCreate()
+#3 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#10 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Users/mac/framework/web/CWebApplication.php(276): CController->run('create')
+#12 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('replies/create')
+#13 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#15 {main}
+REQUEST_URI=/rdp/index.php/replies/create?content_type=issues&content_type_id=1&_=1368994339118
+HTTP_REFERER=http://localhost/rdp/index.php/issues/1
+---
+2013/05/19 20:12:19 [error] [exception.CException] exception 'CException' with message 'Property "Replies.content_type_id" is not defined.' in /Users/mac/framework/base/CComponent.php:174
+Stack trace:
+#0 /Users/mac/framework/db/ar/CActiveRecord.php(160): CComponent->__set('content_type_id', '1')
+#1 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/RepliesController.php(98): CActiveRecord->__set('content_type_id', '1')
+#2 /Users/mac/framework/web/actions/CInlineAction.php(50): RepliesController->actionCreate()
+#3 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#10 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Users/mac/framework/web/CWebApplication.php(276): CController->run('create')
+#12 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('replies/create')
+#13 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#15 {main}
+REQUEST_URI=/rdp/index.php/replies/create?content_type=issues&content_type_id=1&_=1368994339917
+HTTP_REFERER=http://localhost/rdp/index.php/issues/1
+---
+2013/05/19 20:12:21 [error] [exception.CException] exception 'CException' with message 'Property "Replies.content_type_id" is not defined.' in /Users/mac/framework/base/CComponent.php:174
+Stack trace:
+#0 /Users/mac/framework/db/ar/CActiveRecord.php(160): CComponent->__set('content_type_id', '1')
+#1 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/RepliesController.php(98): CActiveRecord->__set('content_type_id', '1')
+#2 /Users/mac/framework/web/actions/CInlineAction.php(50): RepliesController->actionCreate()
+#3 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#10 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Users/mac/framework/web/CWebApplication.php(276): CController->run('create')
+#12 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('replies/create')
+#13 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#15 {main}
+REQUEST_URI=/rdp/index.php/replies/create?content_type=issues&content_type_id=1&_=1368994341706
+HTTP_REFERER=http://localhost/rdp/index.php/issues/1
+---
+2013/05/19 20:12:22 [error] [exception.CException] exception 'CException' with message 'Property "Replies.content_type_id" is not defined.' in /Users/mac/framework/base/CComponent.php:174
+Stack trace:
+#0 /Users/mac/framework/db/ar/CActiveRecord.php(160): CComponent->__set('content_type_id', '1')
+#1 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/RepliesController.php(98): CActiveRecord->__set('content_type_id', '1')
+#2 /Users/mac/framework/web/actions/CInlineAction.php(50): RepliesController->actionCreate()
+#3 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#10 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Users/mac/framework/web/CWebApplication.php(276): CController->run('create')
+#12 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('replies/create')
+#13 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#15 {main}
+REQUEST_URI=/rdp/index.php/replies/create?content_type=issues&content_type_id=1&_=1368994342147
+HTTP_REFERER=http://localhost/rdp/index.php/issues/1
+---
+2013/05/19 20:12:22 [error] [exception.CException] exception 'CException' with message 'Property "Replies.content_type_id" is not defined.' in /Users/mac/framework/base/CComponent.php:174
+Stack trace:
+#0 /Users/mac/framework/db/ar/CActiveRecord.php(160): CComponent->__set('content_type_id', '1')
+#1 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/RepliesController.php(98): CActiveRecord->__set('content_type_id', '1')
+#2 /Users/mac/framework/web/actions/CInlineAction.php(50): RepliesController->actionCreate()
+#3 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#10 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Users/mac/framework/web/CWebApplication.php(276): CController->run('create')
+#12 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('replies/create')
+#13 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#15 {main}
+REQUEST_URI=/rdp/index.php/replies/create?content_type=issues&content_type_id=1&_=1368994342391
+HTTP_REFERER=http://localhost/rdp/index.php/issues/1
+---
+2013/05/19 20:12:22 [error] [exception.CException] exception 'CException' with message 'Property "Replies.content_type_id" is not defined.' in /Users/mac/framework/base/CComponent.php:174
+Stack trace:
+#0 /Users/mac/framework/db/ar/CActiveRecord.php(160): CComponent->__set('content_type_id', '1')
+#1 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/RepliesController.php(98): CActiveRecord->__set('content_type_id', '1')
+#2 /Users/mac/framework/web/actions/CInlineAction.php(50): RepliesController->actionCreate()
+#3 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#10 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Users/mac/framework/web/CWebApplication.php(276): CController->run('create')
+#12 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('replies/create')
+#13 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#15 {main}
+REQUEST_URI=/rdp/index.php/replies/create?content_type=issues&content_type_id=1&_=1368994342942
+HTTP_REFERER=http://localhost/rdp/index.php/issues/1
+---
+2013/05/19 20:12:23 [error] [exception.CException] exception 'CException' with message 'Property "Replies.content_type_id" is not defined.' in /Users/mac/framework/base/CComponent.php:174
+Stack trace:
+#0 /Users/mac/framework/db/ar/CActiveRecord.php(160): CComponent->__set('content_type_id', '1')
+#1 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/RepliesController.php(98): CActiveRecord->__set('content_type_id', '1')
+#2 /Users/mac/framework/web/actions/CInlineAction.php(50): RepliesController->actionCreate()
+#3 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#10 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Users/mac/framework/web/CWebApplication.php(276): CController->run('create')
+#12 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('replies/create')
+#13 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#15 {main}
+REQUEST_URI=/rdp/index.php/replies/create?content_type=issues&content_type_id=1&_=1368994343822
+HTTP_REFERER=http://localhost/rdp/index.php/issues/1
+---
+2013/05/19 20:12:24 [error] [exception.CException] exception 'CException' with message 'Property "Replies.content_type_id" is not defined.' in /Users/mac/framework/base/CComponent.php:174
+Stack trace:
+#0 /Users/mac/framework/db/ar/CActiveRecord.php(160): CComponent->__set('content_type_id', '1')
+#1 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/RepliesController.php(98): CActiveRecord->__set('content_type_id', '1')
+#2 /Users/mac/framework/web/actions/CInlineAction.php(50): RepliesController->actionCreate()
+#3 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#10 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Users/mac/framework/web/CWebApplication.php(276): CController->run('create')
+#12 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('replies/create')
+#13 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#15 {main}
+REQUEST_URI=/rdp/index.php/replies/create?content_type=issues&content_type_id=1&_=1368994344200
+HTTP_REFERER=http://localhost/rdp/index.php/issues/1
+---
+2013/05/19 20:12:24 [error] [exception.CException] exception 'CException' with message 'Property "Replies.content_type_id" is not defined.' in /Users/mac/framework/base/CComponent.php:174
+Stack trace:
+#0 /Users/mac/framework/db/ar/CActiveRecord.php(160): CComponent->__set('content_type_id', '1')
+#1 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/RepliesController.php(98): CActiveRecord->__set('content_type_id', '1')
+#2 /Users/mac/framework/web/actions/CInlineAction.php(50): RepliesController->actionCreate()
+#3 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#10 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Users/mac/framework/web/CWebApplication.php(276): CController->run('create')
+#12 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('replies/create')
+#13 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#15 {main}
+REQUEST_URI=/rdp/index.php/replies/create?content_type=issues&content_type_id=1&_=1368994344518
+HTTP_REFERER=http://localhost/rdp/index.php/issues/1
+---
+2013/05/19 20:12:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/IssuesController.php:200
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/IssuesController.php(54): IssuesController->loadModel('2')
+#1 [internal function]: IssuesController->actionView('2')
+#2 /Users/mac/framework/web/actions/CAction.php(107): ReflectionMethod->invokeArgs(Object(IssuesController), Array)
+#3 /Users/mac/framework/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(IssuesController), Object(ReflectionMethod), Array)
+#4 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#5 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#11 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /Users/mac/framework/web/CWebApplication.php(276): CController->run('view')
+#13 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('issues/view')
+#14 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#16 {main}
+REQUEST_URI=/rdp/index.php/issues/2
+---
+2013/05/19 20:12:49 [error] [exception.CException] exception 'CException' with message 'Property "Replies.content_type_id" is not defined.' in /Users/mac/framework/base/CComponent.php:174
+Stack trace:
+#0 /Users/mac/framework/db/ar/CActiveRecord.php(160): CComponent->__set('content_type_id', '8')
+#1 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/RepliesController.php(98): CActiveRecord->__set('content_type_id', '8')
+#2 /Users/mac/framework/web/actions/CInlineAction.php(50): RepliesController->actionCreate()
+#3 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#10 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Users/mac/framework/web/CWebApplication.php(276): CController->run('create')
+#12 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('replies/create')
+#13 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#15 {main}
+REQUEST_URI=/rdp/index.php/replies/create?content_type=issues&content_type_id=8&_=1368994369136
+HTTP_REFERER=http://localhost/rdp/index.php/issues/8
+---
+2013/05/19 20:12:49 [error] [exception.CException] exception 'CException' with message 'Property "Replies.content_type_id" is not defined.' in /Users/mac/framework/base/CComponent.php:174
+Stack trace:
+#0 /Users/mac/framework/db/ar/CActiveRecord.php(160): CComponent->__set('content_type_id', '8')
+#1 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/RepliesController.php(98): CActiveRecord->__set('content_type_id', '8')
+#2 /Users/mac/framework/web/actions/CInlineAction.php(50): RepliesController->actionCreate()
+#3 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#10 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Users/mac/framework/web/CWebApplication.php(276): CController->run('create')
+#12 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('replies/create')
+#13 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#15 {main}
+REQUEST_URI=/rdp/index.php/replies/create?content_type=issues&content_type_id=8&_=1368994369944
+HTTP_REFERER=http://localhost/rdp/index.php/issues/8
+---
+2013/05/19 20:16:20 [error] [exception.CException] exception 'CException' with message 'Property "Replies.content_type" is not defined.' in /Users/mac/framework/base/CComponent.php:174
+Stack trace:
+#0 /Users/mac/framework/db/ar/CActiveRecord.php(160): CComponent->__set('content_type', 'issues')
+#1 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/RepliesController.php(101): CActiveRecord->__set('content_type', 'issues')
+#2 /Users/mac/framework/web/actions/CInlineAction.php(50): RepliesController->actionCreate()
+#3 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#10 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Users/mac/framework/web/CWebApplication.php(276): CController->run('create')
+#12 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('replies/create')
+#13 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#15 {main}
+REQUEST_URI=/rdp/index.php/replies/create?content_type=issues&issue_id=8&_=1368994580237
+HTTP_REFERER=http://localhost/rdp/index.php/issues/8
+---
+2013/05/19 20:16:21 [error] [exception.CException] exception 'CException' with message 'Property "Replies.content_type" is not defined.' in /Users/mac/framework/base/CComponent.php:174
+Stack trace:
+#0 /Users/mac/framework/db/ar/CActiveRecord.php(160): CComponent->__set('content_type', 'issues')
+#1 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/RepliesController.php(101): CActiveRecord->__set('content_type', 'issues')
+#2 /Users/mac/framework/web/actions/CInlineAction.php(50): RepliesController->actionCreate()
+#3 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#10 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Users/mac/framework/web/CWebApplication.php(276): CController->run('create')
+#12 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('replies/create')
+#13 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#15 {main}
+REQUEST_URI=/rdp/index.php/replies/create?content_type=issues&issue_id=8&_=1368994581103
+HTTP_REFERER=http://localhost/rdp/index.php/issues/8
+---
+2013/05/19 20:16:22 [error] [exception.CException] exception 'CException' with message 'Property "Replies.content_type" is not defined.' in /Users/mac/framework/base/CComponent.php:174
+Stack trace:
+#0 /Users/mac/framework/db/ar/CActiveRecord.php(160): CComponent->__set('content_type', 'issues')
+#1 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/RepliesController.php(101): CActiveRecord->__set('content_type', 'issues')
+#2 /Users/mac/framework/web/actions/CInlineAction.php(50): RepliesController->actionCreate()
+#3 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#10 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Users/mac/framework/web/CWebApplication.php(276): CController->run('create')
+#12 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('replies/create')
+#13 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#15 {main}
+REQUEST_URI=/rdp/index.php/replies/create?content_type=issues&issue_id=8&_=1368994582715
+HTTP_REFERER=http://localhost/rdp/index.php/issues/8
+---
+2013/05/19 20:16:23 [error] [exception.CException] exception 'CException' with message 'Property "Replies.content_type" is not defined.' in /Users/mac/framework/base/CComponent.php:174
+Stack trace:
+#0 /Users/mac/framework/db/ar/CActiveRecord.php(160): CComponent->__set('content_type', 'issues')
+#1 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/RepliesController.php(101): CActiveRecord->__set('content_type', 'issues')
+#2 /Users/mac/framework/web/actions/CInlineAction.php(50): RepliesController->actionCreate()
+#3 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#10 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Users/mac/framework/web/CWebApplication.php(276): CController->run('create')
+#12 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('replies/create')
+#13 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#15 {main}
+REQUEST_URI=/rdp/index.php/replies/create?content_type=issues&issue_id=8&_=1368994583008
+HTTP_REFERER=http://localhost/rdp/index.php/issues/8
+---
+2013/05/19 20:16:23 [error] [exception.CException] exception 'CException' with message 'Property "Replies.content_type" is not defined.' in /Users/mac/framework/base/CComponent.php:174
+Stack trace:
+#0 /Users/mac/framework/db/ar/CActiveRecord.php(160): CComponent->__set('content_type', 'issues')
+#1 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/RepliesController.php(101): CActiveRecord->__set('content_type', 'issues')
+#2 /Users/mac/framework/web/actions/CInlineAction.php(50): RepliesController->actionCreate()
+#3 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#10 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Users/mac/framework/web/CWebApplication.php(276): CController->run('create')
+#12 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('replies/create')
+#13 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#15 {main}
+REQUEST_URI=/rdp/index.php/replies/create?content_type=issues&issue_id=8&_=1368994583438
+HTTP_REFERER=http://localhost/rdp/index.php/issues/8
+---
+2013/05/19 20:16:23 [error] [exception.CException] exception 'CException' with message 'Property "Replies.content_type" is not defined.' in /Users/mac/framework/base/CComponent.php:174
+Stack trace:
+#0 /Users/mac/framework/db/ar/CActiveRecord.php(160): CComponent->__set('content_type', 'issues')
+#1 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/RepliesController.php(101): CActiveRecord->__set('content_type', 'issues')
+#2 /Users/mac/framework/web/actions/CInlineAction.php(50): RepliesController->actionCreate()
+#3 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#10 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Users/mac/framework/web/CWebApplication.php(276): CController->run('create')
+#12 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('replies/create')
+#13 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#15 {main}
+REQUEST_URI=/rdp/index.php/replies/create?content_type=issues&issue_id=8&_=1368994583695
+HTTP_REFERER=http://localhost/rdp/index.php/issues/8
+---
+2013/05/19 20:16:36 [error] [exception.CException] exception 'CException' with message 'Property "Replies.content_type" is not defined.' in /Users/mac/framework/base/CComponent.php:174
+Stack trace:
+#0 /Users/mac/framework/db/ar/CActiveRecord.php(160): CComponent->__set('content_type', 'issues')
+#1 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/RepliesController.php(101): CActiveRecord->__set('content_type', 'issues')
+#2 /Users/mac/framework/web/actions/CInlineAction.php(50): RepliesController->actionCreate()
+#3 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#4 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#10 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /Users/mac/framework/web/CWebApplication.php(276): CController->run('create')
+#12 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('replies/create')
+#13 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#15 {main}
+REQUEST_URI=/rdp/index.php/replies/create?content_type=issues&issue_id=8&_=1368994596343
+HTTP_REFERER=http://localhost/rdp/index.php/issues/8
+---
+2013/05/19 20:17:22 [error] [exception.CException] exception 'CException' with message 'Property "Replies.content_type" is not defined.' in /Users/mac/framework/base/CComponent.php:131
+Stack trace:
+#0 /Users/mac/framework/db/ar/CActiveRecord.php(144): CComponent->__get('content_type')
+#1 /Users/mac/framework/web/helpers/CHtml.php(2044): CActiveRecord->__get('content_type')
+#2 /Users/mac/framework/web/helpers/CHtml.php(1774): CHtml::resolveValue(Object(Replies), 'content_type')
+#3 /Users/mac/framework/web/helpers/CHtml.php(1219): CHtml::activeInputField('hidden', Object(Replies), 'content_type', Array)
+#4 /Users/mac/framework/web/widgets/CActiveForm.php(590): CHtml::activeHiddenField(Object(Replies), 'content_type', Array)
+#5 /Applications/XAMPP/xamppfiles/htdocs/rdp/themes/System-Office-1/views/replies/_formajax.php(19): CActiveForm->hiddenField(Object(Replies), 'content_type')
+#6 /Users/mac/framework/web/CBaseController.php(127): require('/Applications/X...')
+#7 /Users/mac/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/X...', Array, true)
+#8 /Users/mac/framework/web/CController.php(870): CBaseController->renderFile('/Applications/X...', Array, true)
+#9 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/RepliesController.php(106): CController->renderPartial('_formajax', Array, true, true)
+#10 /Users/mac/framework/web/actions/CInlineAction.php(50): RepliesController->actionCreate()
+#11 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#12 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#13 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#14 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#15 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#16 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#18 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /Users/mac/framework/web/CWebApplication.php(276): CController->run('create')
+#20 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('replies/create')
+#21 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#22 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#23 {main}
+REQUEST_URI=/rdp/index.php/replies/create?issue_id=8&_=1368994642017
+HTTP_REFERER=http://localhost/rdp/index.php/issues/8
+---
+2013/05/19 20:23:23 [warning] [application] Failed to set unsafe attribute "path" of "Files".
+2013/05/19 20:23:23 [warning] [application] Failed to set unsafe attribute "title" of "Files".
+2013/05/19 20:23:23 [error] [php] move_uploaded_file(/Applications/XAMPP/xamppfiles/htdocs/rdp/protected/data/files/APO_questions.doc) [<a href='function.move-uploaded-file'>function.move-uploaded-file</a>]: failed to open stream: Permission denied (/Applications/XAMPP/xamppfiles/htdocs/rdp/protected/extensions/jquery_upload/UploadHandler.php:188)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/FilesController.php(308): UploadHandler->post()
+#1 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/FilesController.php(74): FilesController->uploadHandler()
+#2 /Users/mac/framework/web/actions/CInlineAction.php(50): FilesController->actionUploadFile()
+#3 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams()
+#4 /Users/mac/framework/web/filters/CFilterChain.php(134): FilesController->runAction()
+#5 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Users/mac/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#7 /Users/mac/framework/web/filters/CInlineFilter.php(59): FilesController->filterAccessControl()
+#8 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#9 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#10 /Users/mac/framework/web/CController.php(266): FilesController->runActionWithFilters()
+#11 /Users/mac/framework/web/CWebApplication.php(276): FilesController->run()
+#12 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#13 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CWebApplication->run()
+REQUEST_URI=/rdp/index.php/files/uploadFile
+2013/05/19 20:23:45 [warning] [application] Failed to set unsafe attribute "path" of "Files".
+2013/05/19 20:23:45 [warning] [application] Failed to set unsafe attribute "title" of "Files".
+2013/05/19 20:23:45 [error] [php] move_uploaded_file(/Applications/XAMPP/xamppfiles/htdocs/rdp/protected/data/files/About Stacks.pdf) [<a href='function.move-uploaded-file'>function.move-uploaded-file</a>]: failed to open stream: Permission denied (/Applications/XAMPP/xamppfiles/htdocs/rdp/protected/extensions/jquery_upload/UploadHandler.php:188)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/FilesController.php(308): UploadHandler->post()
+#1 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/FilesController.php(74): FilesController->uploadHandler()
+#2 /Users/mac/framework/web/actions/CInlineAction.php(50): FilesController->actionUploadFile()
+#3 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams()
+#4 /Users/mac/framework/web/filters/CFilterChain.php(134): FilesController->runAction()
+#5 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#6 /Users/mac/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#7 /Users/mac/framework/web/filters/CInlineFilter.php(59): FilesController->filterAccessControl()
+#8 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#9 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#10 /Users/mac/framework/web/CController.php(266): FilesController->runActionWithFilters()
+#11 /Users/mac/framework/web/CWebApplication.php(276): FilesController->run()
+#12 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#13 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#14 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CWebApplication->run()
+REQUEST_URI=/rdp/index.php/files/uploadFile
+2013/05/19 20:35:50 [error] [exception.CException] exception 'CException' with message 'The asset "/jquery.fileupload.js" to be published does not exist.' in /Users/mac/framework/web/CAssetManager.php:239
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/extensions/p3extensions/widgets/jquery-file-upload/EFileUpload.php(27): CAssetManager->publish('/jquery.fileupl...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/extensions/p3extensions/widgets/jquery-file-upload/EFileUpload.php(9): EFileUpload->registerClientScripts()
+#2 /Users/mac/framework/web/CBaseController.php(148): EFileUpload->init()
+#3 /Users/mac/framework/web/CBaseController.php(173): CBaseController->createWidget('ext.p3extension...', Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/rdp/themes/System-Office-1/views/replies/_formajax.php(54): CBaseController->widget('ext.p3extension...')
+#5 /Users/mac/framework/web/CBaseController.php(127): require('/Applications/X...')
+#6 /Users/mac/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/X...', Array, true)
+#7 /Users/mac/framework/web/CController.php(870): CBaseController->renderFile('/Applications/X...', Array, true)
+#8 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/RepliesController.php(106): CController->renderPartial('_formajax', Array, true, true)
+#9 /Users/mac/framework/web/actions/CInlineAction.php(50): RepliesController->actionCreate()
+#10 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#17 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /Users/mac/framework/web/CWebApplication.php(276): CController->run('create')
+#19 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('replies/create')
+#20 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#22 {main}
+REQUEST_URI=/rdp/index.php/replies/create?content_type=issues&content_type_id=8&_=1368995750474
+HTTP_REFERER=http://localhost/rdp/index.php/issues/8
+---
+2013/05/19 20:44:10 [error] [exception.CException] exception 'CException' with message 'The asset "/jquery.fileupload.js" to be published does not exist.' in /Users/mac/framework/web/CAssetManager.php:239
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/extensions/p3extensions/widgets/jquery-file-upload/EFileUpload.php(27): CAssetManager->publish('/jquery.fileupl...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/extensions/p3extensions/widgets/jquery-file-upload/EFileUpload.php(9): EFileUpload->registerClientScripts()
+#2 /Users/mac/framework/web/CBaseController.php(148): EFileUpload->init()
+#3 /Users/mac/framework/web/CBaseController.php(173): CBaseController->createWidget('ext.p3extension...', Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/rdp/themes/System-Office-1/views/replies/_formajax.php(54): CBaseController->widget('ext.p3extension...')
+#5 /Users/mac/framework/web/CBaseController.php(127): require('/Applications/X...')
+#6 /Users/mac/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/X...', Array, true)
+#7 /Users/mac/framework/web/CController.php(870): CBaseController->renderFile('/Applications/X...', Array, true)
+#8 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/RepliesController.php(106): CController->renderPartial('_formajax', Array, true, true)
+#9 /Users/mac/framework/web/actions/CInlineAction.php(50): RepliesController->actionCreate()
+#10 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#17 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /Users/mac/framework/web/CWebApplication.php(276): CController->run('create')
+#19 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('replies/create')
+#20 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#22 {main}
+REQUEST_URI=/rdp/index.php/replies/create?content_type=issues&content_type_id=8&_=1368996250293
+HTTP_REFERER=http://localhost/rdp/index.php/issues/8
+---
+2013/05/19 20:45:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "view/id".' in /Users/mac/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('view/id')
+#1 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=/rdp/index.php/view/id/8
+HTTP_REFERER=http://localhost/rdp/index.php/issues/8
+---
+2013/05/19 20:45:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "id".' in /Users/mac/framework/web/CController.php:484
+Stack trace:
+#0 /Users/mac/framework/web/CController.php(271): CController->missingAction('id')
+#1 /Users/mac/framework/web/CWebApplication.php(276): CController->run('id')
+#2 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('issues/id')
+#3 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#4 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#5 {main}
+REQUEST_URI=/rdp/index.php/issues/id/8
+---
+2013/05/19 20:45:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "view/id".' in /Users/mac/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('view/id')
+#1 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#3 {main}
+REQUEST_URI=/rdp/index.php/view/id/8
+HTTP_REFERER=http://localhost/rdp/index.php/issues/8
+---
+2013/05/19 20:47:48 [error] [php] array_replace_recursive() [<a href='function.array-replace-recursive'>function.array-replace-recursive</a>]: Argument #2 is not an array (/Applications/XAMPP/xamppfiles/htdocs/rdp/protected/extensions/jquery_upload/UploadHandler.php:54)
+Stack trace:
+#0 /Users/mac/framework/web/CBaseController.php(147): CWidgetFactory->createWidget()
+#1 /Users/mac/framework/web/CBaseController.php(173): RepliesController->createWidget()
+#2 /Applications/XAMPP/xamppfiles/htdocs/rdp/themes/System-Office-1/views/replies/_formajax.php(54): RepliesController->widget()
+#3 /Users/mac/framework/web/CBaseController.php(127): require()
+#4 /Users/mac/framework/web/CBaseController.php(96): RepliesController->renderInternal()
+#5 /Users/mac/framework/web/CController.php(870): RepliesController->renderFile()
+#6 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/RepliesController.php(106): RepliesController->renderPartial()
+#7 /Users/mac/framework/web/actions/CInlineAction.php(50): RepliesController->actionCreate()
+#8 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams()
+#9 /Users/mac/framework/web/filters/CFilterChain.php(134): RepliesController->runAction()
+#10 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#11 /Users/mac/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#12 /Users/mac/framework/web/filters/CInlineFilter.php(59): RepliesController->filterAccessControl()
+#13 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#14 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#15 /Users/mac/framework/web/CController.php(266): RepliesController->runActionWithFilters()
+#16 /Users/mac/framework/web/CWebApplication.php(276): RepliesController->run()
+#17 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#18 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#19 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CWebApplication->run()
+REQUEST_URI=/rdp/index.php/replies/create?content_type=issues&content_type_id=8&_=1368996468331
+2013/05/19 20:52:02 [error] [exception.CException] exception 'CException' with message 'Alias "ext.p3extensions.widget.jquery-file-upload.EFileUpload" is invalid. Make sure it points to an existing PHP file.' in /Users/mac/framework/YiiBase.php:318
+Stack trace:
+#0 /Users/mac/framework/web/CWidgetFactory.php(147): YiiBase::import('ext.p3extension...', true)
+#1 /Users/mac/framework/web/CBaseController.php(147): CWidgetFactory->createWidget(Object(RepliesController), 'ext.p3extension...', Array)
+#2 /Users/mac/framework/web/CBaseController.php(173): CBaseController->createWidget('ext.p3extension...', Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/rdp/themes/System-Office-1/views/replies/_formajax.php(54): CBaseController->widget('ext.p3extension...')
+#4 /Users/mac/framework/web/CBaseController.php(127): require('/Applications/X...')
+#5 /Users/mac/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/X...', Array, true)
+#6 /Users/mac/framework/web/CController.php(870): CBaseController->renderFile('/Applications/X...', Array, true)
+#7 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/RepliesController.php(106): CController->renderPartial('_formajax', Array, true, true)
+#8 /Users/mac/framework/web/actions/CInlineAction.php(50): RepliesController->actionCreate()
+#9 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#10 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#11 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#12 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#13 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#14 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#16 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /Users/mac/framework/web/CWebApplication.php(276): CController->run('create')
+#18 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('replies/create')
+#19 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#20 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#21 {main}
+REQUEST_URI=/rdp/index.php/replies/create?content_type=issues&content_type_id=8&_=1368996722362
+HTTP_REFERER=http://localhost/rdp/index.php/issues/8
+---
+2013/05/19 20:52:03 [error] [exception.CException] exception 'CException' with message 'Alias "ext.p3extensions.widget.jquery-file-upload.EFileUpload" is invalid. Make sure it points to an existing PHP file.' in /Users/mac/framework/YiiBase.php:318
+Stack trace:
+#0 /Users/mac/framework/web/CWidgetFactory.php(147): YiiBase::import('ext.p3extension...', true)
+#1 /Users/mac/framework/web/CBaseController.php(147): CWidgetFactory->createWidget(Object(RepliesController), 'ext.p3extension...', Array)
+#2 /Users/mac/framework/web/CBaseController.php(173): CBaseController->createWidget('ext.p3extension...', Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/rdp/themes/System-Office-1/views/replies/_formajax.php(54): CBaseController->widget('ext.p3extension...')
+#4 /Users/mac/framework/web/CBaseController.php(127): require('/Applications/X...')
+#5 /Users/mac/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/X...', Array, true)
+#6 /Users/mac/framework/web/CController.php(870): CBaseController->renderFile('/Applications/X...', Array, true)
+#7 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/RepliesController.php(106): CController->renderPartial('_formajax', Array, true, true)
+#8 /Users/mac/framework/web/actions/CInlineAction.php(50): RepliesController->actionCreate()
+#9 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#10 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#11 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#12 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#13 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#14 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#16 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /Users/mac/framework/web/CWebApplication.php(276): CController->run('create')
+#18 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('replies/create')
+#19 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#20 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#21 {main}
+REQUEST_URI=/rdp/index.php/replies/create?content_type=issues&content_type_id=8&_=1368996723701
+HTTP_REFERER=http://localhost/rdp/index.php/issues/8
+---
+2013/05/19 20:52:35 [error] [exception.CException] exception 'CException' with message 'The asset "/jquery.fileupload.js" to be published does not exist.' in /Users/mac/framework/web/CAssetManager.php:239
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/extensions/p3extensions/widgets/jquery-file-upload/EFileUpload.php(27): CAssetManager->publish('/jquery.fileupl...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/extensions/p3extensions/widgets/jquery-file-upload/EFileUpload.php(9): EFileUpload->registerClientScripts()
+#2 /Users/mac/framework/web/CBaseController.php(148): EFileUpload->init()
+#3 /Users/mac/framework/web/CBaseController.php(173): CBaseController->createWidget('ext.p3extension...', Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/rdp/themes/System-Office-1/views/replies/_formajax.php(54): CBaseController->widget('ext.p3extension...')
+#5 /Users/mac/framework/web/CBaseController.php(127): require('/Applications/X...')
+#6 /Users/mac/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/X...', Array, true)
+#7 /Users/mac/framework/web/CController.php(870): CBaseController->renderFile('/Applications/X...', Array, true)
+#8 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/RepliesController.php(106): CController->renderPartial('_formajax', Array, true, true)
+#9 /Users/mac/framework/web/actions/CInlineAction.php(50): RepliesController->actionCreate()
+#10 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#17 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /Users/mac/framework/web/CWebApplication.php(276): CController->run('create')
+#19 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('replies/create')
+#20 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#22 {main}
+REQUEST_URI=/rdp/index.php/replies/create?content_type=issues&content_type_id=8&_=1368996755450
+HTTP_REFERER=http://localhost/rdp/index.php/issues/8
+---
+2013/05/19 20:56:37 [error] [exception.CException] exception 'CException' with message 'The asset "/Applications/XAMPP/xamppfiles/htdocs/rdp/protected/extensions/p3extensions/widgets/jquery-file-upload/../../../jQuery-File-Upload/js/jquery.fileupload-ui.css" to be published does not exist.' in /Users/mac/framework/web/CAssetManager.php:239
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/extensions/p3extensions/widgets/jquery-file-upload/EFileUpload.php(32): CAssetManager->publish('/Applications/X...')
+#1 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/extensions/p3extensions/widgets/jquery-file-upload/EFileUpload.php(9): EFileUpload->registerClientScripts()
+#2 /Users/mac/framework/web/CBaseController.php(148): EFileUpload->init()
+#3 /Users/mac/framework/web/CBaseController.php(173): CBaseController->createWidget('ext.p3extension...', Array)
+#4 /Applications/XAMPP/xamppfiles/htdocs/rdp/themes/System-Office-1/views/replies/_formajax.php(54): CBaseController->widget('ext.p3extension...')
+#5 /Users/mac/framework/web/CBaseController.php(127): require('/Applications/X...')
+#6 /Users/mac/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/X...', Array, true)
+#7 /Users/mac/framework/web/CController.php(870): CBaseController->renderFile('/Applications/X...', Array, true)
+#8 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/RepliesController.php(106): CController->renderPartial('_formajax', Array, true, true)
+#9 /Users/mac/framework/web/actions/CInlineAction.php(50): RepliesController->actionCreate()
+#10 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#11 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#12 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#13 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#14 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#15 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#16 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#17 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /Users/mac/framework/web/CWebApplication.php(276): CController->run('create')
+#19 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('replies/create')
+#20 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#22 {main}
+REQUEST_URI=/rdp/index.php/replies/create?content_type=issues&content_type_id=8&_=1368996997514
+HTTP_REFERER=http://localhost/rdp/index.php/issues/8
+---
+2013/05/19 21:01:47 [warning] [application] Failed to set unsafe attribute "schemeid" of "Instructions".
+2013/05/19 21:01:47 [warning] [application] Failed to set unsafe attribute "from" of "Instructions".
+2013/05/19 21:01:47 [warning] [application] Failed to set unsafe attribute "instruction" of "Instructions".
+2013/05/19 21:01:47 [warning] [application] Failed to set unsafe attribute "attachments" of "Instructions".
+2013/05/19 21:01:47 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'id' cannot be null. The SQL statement executed was: INSERT INTO `tbl_instructions` (`id`) VALUES (NULL).
+2013/05/19 21:01:47 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'id' cannot be null. The SQL statement executed was: INSERT INTO `tbl_instructions` (`id`) VALUES (NULL)' in /Users/mac/framework/db/CDbCommand.php:354
+Stack trace:
+#0 /Users/mac/framework/db/ar/CActiveRecord.php(1014): CDbCommand->execute()
+#1 /Users/mac/framework/db/ar/CActiveRecord.php(787): CActiveRecord->insert(NULL)
+#2 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/InstructionsController.php(71): CActiveRecord->save()
+#3 /Users/mac/framework/web/actions/CInlineAction.php(50): InstructionsController->actionCreate()
+#4 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#5 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#7 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#11 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /Users/mac/framework/web/CWebApplication.php(276): CController->run('create')
+#13 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('instructions/cr...')
+#14 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#15 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#16 {main}
+REQUEST_URI=/rdp/index.php/instructions/create
+HTTP_REFERER=http://localhost/rdp/index.php/instructions/create
+---
+2013/05/20 03:31:13 [error] [exception.CException] exception 'CException' with message 'XUpload must specify "model" and "attribute" or "name" property values.' in /Users/mac/framework/zii/widgets/jui/CJuiInputWidget.php:54
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/extensions/xupload/XUpload.php(90): CJuiInputWidget->resolveNameID()
+#1 /Users/mac/framework/web/CBaseController.php(174): XUpload->run()
+#2 /Applications/XAMPP/xamppfiles/htdocs/rdp/themes/System-Office-1/views/replies/_formajax.php(59): CBaseController->widget('ext.xupload.XUp...', Array)
+#3 /Users/mac/framework/web/CBaseController.php(127): require('/Applications/X...')
+#4 /Users/mac/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/X...', Array, true)
+#5 /Users/mac/framework/web/CController.php(870): CBaseController->renderFile('/Applications/X...', Array, true)
+#6 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/RepliesController.php(106): CController->renderPartial('_formajax', Array, true, true)
+#7 /Users/mac/framework/web/actions/CInlineAction.php(50): RepliesController->actionCreate()
+#8 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#9 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#11 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#12 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#13 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#15 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /Users/mac/framework/web/CWebApplication.php(276): CController->run('create')
+#17 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('replies/create')
+#18 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#19 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#20 {main}
+REQUEST_URI=/rdp/index.php/replies/create?content_type=issues&content_type_id=8&_=1369020673285
+HTTP_REFERER=http://localhost/rdp/index.php/issues/8
+---
+2013/05/20 03:53:54 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /Users/mac/framework/web/auth/CAccessControlFilter.php:157
+Stack trace:
+#0 /Users/mac/framework/web/auth/CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /Users/mac/framework/web/filters/CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#6 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(XUploadAction), Array)
+#7 /Users/mac/framework/web/CWebApplication.php(276): CController->run('upload')
+#8 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('files/upload')
+#9 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#10 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#11 {main}
+REQUEST_URI=/rdp/index.php/files/upload
+HTTP_REFERER=http://localhost/rdp/index.php/issues/8
+---
+2013/05/20 03:55:41 [error] [php] chmod() [<a href='function.chmod'>function.chmod</a>]: Operation not permitted (/Applications/XAMPP/xamppfiles/htdocs/rdp/protected/extensions/xupload/actions/XUploadAction.php:165)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/extensions/xupload/actions/XUploadAction.php(191): XUploadAction->handleUploading()
+#1 /Users/mac/framework/web/actions/CAction.php(75): XUploadAction->run()
+#2 /Users/mac/framework/web/CController.php(309): XUploadAction->runWithParams()
+#3 /Users/mac/framework/web/filters/CFilterChain.php(134): FilesController->runAction()
+#4 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#5 /Users/mac/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#6 /Users/mac/framework/web/filters/CInlineFilter.php(59): FilesController->filterAccessControl()
+#7 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#8 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#9 /Users/mac/framework/web/CController.php(266): FilesController->runActionWithFilters()
+#10 /Users/mac/framework/web/CWebApplication.php(276): FilesController->run()
+#11 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#12 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#13 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CWebApplication->run()
+REQUEST_URI=/rdp/index.php/files/upload
+2013/05/20 04:03:12 [error] [php] chmod() [<a href='function.chmod'>function.chmod</a>]: Operation not permitted (/Applications/XAMPP/xamppfiles/htdocs/rdp/protected/extensions/xupload/actions/XUploadAction.php:165)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/extensions/xupload/actions/XUploadAction.php(191): XUploadAction->handleUploading()
+#1 /Users/mac/framework/web/actions/CAction.php(75): XUploadAction->run()
+#2 /Users/mac/framework/web/CController.php(309): XUploadAction->runWithParams()
+#3 /Users/mac/framework/web/filters/CFilterChain.php(134): FilesController->runAction()
+#4 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#5 /Users/mac/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#6 /Users/mac/framework/web/filters/CInlineFilter.php(59): FilesController->filterAccessControl()
+#7 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#8 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#9 /Users/mac/framework/web/CController.php(266): FilesController->runActionWithFilters()
+#10 /Users/mac/framework/web/CWebApplication.php(276): FilesController->run()
+#11 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#12 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#13 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CWebApplication->run()
+REQUEST_URI=/rdp/index.php/files/upload
+2013/05/20 04:06:14 [error] [php] chmod() [<a href='function.chmod'>function.chmod</a>]: Operation not permitted (/Applications/XAMPP/xamppfiles/htdocs/rdp/protected/extensions/xupload/actions/XUploadAction.php:165)
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/extensions/xupload/actions/XUploadAction.php(191): XUploadAction->handleUploading()
+#1 /Users/mac/framework/web/actions/CAction.php(75): XUploadAction->run()
+#2 /Users/mac/framework/web/CController.php(309): XUploadAction->runWithParams()
+#3 /Users/mac/framework/web/filters/CFilterChain.php(134): FilesController->runAction()
+#4 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#5 /Users/mac/framework/web/CController.php(1146): CAccessControlFilter->filter()
+#6 /Users/mac/framework/web/filters/CInlineFilter.php(59): FilesController->filterAccessControl()
+#7 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter()
+#8 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#9 /Users/mac/framework/web/CController.php(266): FilesController->runActionWithFilters()
+#10 /Users/mac/framework/web/CWebApplication.php(276): FilesController->run()
+#11 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController()
+#12 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#13 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CWebApplication->run()
+REQUEST_URI=/rdp/index.php/files/upload
+2013/05/20 04:07:06 [error] [exception.CException] exception 'CException' with message 'Alias "xupload.models.XUploadForm" is invalid. Make sure it points to an existing directory or file.' in /Users/mac/framework/YiiBase.php:343
+Stack trace:
+#0 /Users/mac/framework/YiiBase.php(198): YiiBase::import('xupload.models....', true)
+#1 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/extensions/xupload/actions/XUploadAction.php(175): YiiBase::createComponent(Array)
+#2 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/extensions/xupload/actions/XUploadAction.php(237): XUploadAction->init()
+#3 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/extensions/xupload/actions/XUploadAction.php(191): XUploadAction->handleUploading()
+#4 /Users/mac/framework/web/actions/CAction.php(75): XUploadAction->run()
+#5 /Users/mac/framework/web/CController.php(309): CAction->runWithParams(Array)
+#6 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(XUploadAction))
+#7 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#8 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#9 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#10 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#12 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(XUploadAction), Array)
+#13 /Users/mac/framework/web/CWebApplication.php(276): CController->run('upload')
+#14 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('files/upload')
+#15 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#16 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#17 {main}
+REQUEST_URI=/rdp/index.php/files/upload
+HTTP_REFERER=http://localhost/rdp/index.php/issues/8
+---
+2013/05/20 04:10:00 [error] [exception.CException] exception 'CException' with message 'Alias "xupload.models.XUploadForm" is invalid. Make sure it points to an existing directory or file.' in /Users/mac/framework/YiiBase.php:343
+Stack trace:
+#0 /Users/mac/framework/YiiBase.php(198): YiiBase::import('xupload.models....', true)
+#1 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/extensions/xupload/actions/XUploadAction.php(175): YiiBase::createComponent(Array)
+#2 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/extensions/xupload/actions/XUploadAction.php(237): XUploadAction->init()
+#3 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/extensions/xupload/actions/XUploadAction.php(191): XUploadAction->handleUploading()
+#4 /Users/mac/framework/web/actions/CAction.php(75): XUploadAction->run()
+#5 /Users/mac/framework/web/CController.php(309): CAction->runWithParams(Array)
+#6 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(XUploadAction))
+#7 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#8 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#9 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#10 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#12 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(XUploadAction), Array)
+#13 /Users/mac/framework/web/CWebApplication.php(276): CController->run('upload')
+#14 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('files/upload')
+#15 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#16 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#17 {main}
+REQUEST_URI=/rdp/index.php/files/upload
+HTTP_REFERER=http://localhost/rdp/index.php/issues/8
+---
+2013/05/20 04:12:39 [error] [exception.CException] exception 'CException' with message 'Alias "xupload.models.XUploadForm" is invalid. Make sure it points to an existing directory or file.' in /Users/mac/framework/YiiBase.php:343
+Stack trace:
+#0 /Users/mac/framework/YiiBase.php(198): YiiBase::import('xupload.models....', true)
+#1 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/extensions/xupload/actions/XUploadAction.php(175): YiiBase::createComponent(Array)
+#2 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/extensions/xupload/actions/XUploadAction.php(237): XUploadAction->init()
+#3 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/extensions/xupload/actions/XUploadAction.php(191): XUploadAction->handleUploading()
+#4 /Users/mac/framework/web/actions/CAction.php(75): XUploadAction->run()
+#5 /Users/mac/framework/web/CController.php(309): CAction->runWithParams(Array)
+#6 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(XUploadAction))
+#7 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#8 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#9 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#10 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#11 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#12 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(XUploadAction), Array)
+#13 /Users/mac/framework/web/CWebApplication.php(276): CController->run('upload')
+#14 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('files/upload')
+#15 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#16 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#17 {main}
+REQUEST_URI=/rdp/index.php/files/upload
+HTTP_REFERER=http://localhost/rdp/index.php/issues/8
+---
+2013/05/20 04:19:23 [error] [exception.CException] exception 'CException' with message 'Alias "xupload.XUpload" is invalid. Make sure it points to an existing directory or file.' in /Users/mac/framework/YiiBase.php:343
+Stack trace:
+#0 /Users/mac/framework/web/CWidgetFactory.php(147): YiiBase::import('xupload.XUpload', true)
+#1 /Users/mac/framework/web/CBaseController.php(147): CWidgetFactory->createWidget(Object(RepliesController), 'xupload.XUpload', Array)
+#2 /Users/mac/framework/web/CBaseController.php(173): CBaseController->createWidget('xupload.XUpload', Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/rdp/themes/System-Office-1/views/replies/_formajax.php(60): CBaseController->widget('xupload.XUpload', Array)
+#4 /Users/mac/framework/web/CBaseController.php(127): require('/Applications/X...')
+#5 /Users/mac/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/X...', Array, true)
+#6 /Users/mac/framework/web/CController.php(870): CBaseController->renderFile('/Applications/X...', Array, true)
+#7 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/RepliesController.php(106): CController->renderPartial('_formajax', Array, true, true)
+#8 /Users/mac/framework/web/actions/CInlineAction.php(50): RepliesController->actionCreate()
+#9 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#10 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#11 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#12 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#13 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#14 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#16 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /Users/mac/framework/web/CWebApplication.php(276): CController->run('create')
+#18 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('replies/create')
+#19 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#20 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#21 {main}
+REQUEST_URI=/rdp/index.php/replies/create?content_type=issues&content_type_id=8&_=1369023559965
+HTTP_REFERER=http://localhost/rdp/index.php/issues/8
+---
+2013/05/20 04:20:34 [error] [exception.CException] exception 'CException' with message 'Alias "xupload.XUpload" is invalid. Make sure it points to an existing directory or file.' in /Users/mac/framework/YiiBase.php:343
+Stack trace:
+#0 /Users/mac/framework/web/CWidgetFactory.php(147): YiiBase::import('xupload.XUpload', true)
+#1 /Users/mac/framework/web/CBaseController.php(147): CWidgetFactory->createWidget(Object(RepliesController), 'xupload.XUpload', Array)
+#2 /Users/mac/framework/web/CBaseController.php(173): CBaseController->createWidget('xupload.XUpload', Array)
+#3 /Applications/XAMPP/xamppfiles/htdocs/rdp/themes/System-Office-1/views/replies/_formajax.php(60): CBaseController->widget('xupload.XUpload', Array)
+#4 /Users/mac/framework/web/CBaseController.php(127): require('/Applications/X...')
+#5 /Users/mac/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/X...', Array, true)
+#6 /Users/mac/framework/web/CController.php(870): CBaseController->renderFile('/Applications/X...', Array, true)
+#7 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/RepliesController.php(106): CController->renderPartial('_formajax', Array, true, true)
+#8 /Users/mac/framework/web/actions/CInlineAction.php(50): RepliesController->actionCreate()
+#9 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#10 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#11 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#12 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#13 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#14 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#15 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#16 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /Users/mac/framework/web/CWebApplication.php(276): CController->run('create')
+#18 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('replies/create')
+#19 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#20 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#21 {main}
+REQUEST_URI=/rdp/index.php/replies/create?content_type=issues&content_type_id=8&_=1369023634775
+HTTP_REFERER=http://localhost/rdp/index.php/issues/8
+---
+2013/05/20 04:23:09 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'Could not upload file' in /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/extensions/xupload/actions/XUploadAction.php:281
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/extensions/xupload/actions/XUploadAction.php(191): XUploadAction->handleUploading()
+#1 /Users/mac/framework/web/actions/CAction.php(75): XUploadAction->run()
+#2 /Users/mac/framework/web/CController.php(309): CAction->runWithParams(Array)
+#3 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(XUploadAction))
+#4 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#5 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#6 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#9 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(XUploadAction), Array)
+#10 /Users/mac/framework/web/CWebApplication.php(276): CController->run('upload')
+#11 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('files/upload')
+#12 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#13 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#14 {main}
+REQUEST_URI=/rdp/index.php/files/upload
+HTTP_REFERER=http://localhost/rdp/index.php/issues/8
+---
+2013/05/20 04:23:32 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'Could not upload file' in /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/extensions/xupload/actions/XUploadAction.php:281
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/extensions/xupload/actions/XUploadAction.php(191): XUploadAction->handleUploading()
+#1 /Users/mac/framework/web/actions/CAction.php(75): XUploadAction->run()
+#2 /Users/mac/framework/web/CController.php(309): CAction->runWithParams(Array)
+#3 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(XUploadAction))
+#4 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#5 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#6 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#9 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(XUploadAction), Array)
+#10 /Users/mac/framework/web/CWebApplication.php(276): CController->run('upload')
+#11 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('files/upload')
+#12 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#13 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#14 {main}
+REQUEST_URI=/rdp/index.php/files/upload
+HTTP_REFERER=http://localhost/rdp/index.php/issues/8
+---
+2013/05/20 04:28:57 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'Could not upload file' in /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/extensions/xupload/actions/XUploadAction.php:281
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/extensions/xupload/actions/XUploadAction.php(191): XUploadAction->handleUploading()
+#1 /Users/mac/framework/web/actions/CAction.php(75): XUploadAction->run()
+#2 /Users/mac/framework/web/CController.php(309): CAction->runWithParams(Array)
+#3 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(XUploadAction))
+#4 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#5 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#6 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#9 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(XUploadAction), Array)
+#10 /Users/mac/framework/web/CWebApplication.php(276): CController->run('upload')
+#11 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('files/upload')
+#12 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#13 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#14 {main}
+REQUEST_URI=/rdp/index.php/files/upload
+HTTP_REFERER=http://localhost/rdp/index.php/issues/4
+---
+2013/05/20 04:32:16 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'Could not upload file' in /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/extensions/xupload/actions/XUploadAction.php:281
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/extensions/xupload/actions/XUploadAction.php(191): XUploadAction->handleUploading()
+#1 /Users/mac/framework/web/actions/CAction.php(75): XUploadAction->run()
+#2 /Users/mac/framework/web/CController.php(309): CAction->runWithParams(Array)
+#3 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(XUploadAction))
+#4 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#5 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#6 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#9 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(XUploadAction), Array)
+#10 /Users/mac/framework/web/CWebApplication.php(276): CController->run('upload')
+#11 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('files/upload')
+#12 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#13 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#14 {main}
+REQUEST_URI=/rdp/index.php/files/upload
+HTTP_REFERER=http://localhost/rdp/index.php/issues/4
+---
+2013/05/20 04:37:51 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'Could not upload file' in /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/extensions/xupload/actions/XUploadAction.php:281
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/extensions/xupload/actions/XUploadAction.php(191): XUploadAction->handleUploading()
+#1 /Users/mac/framework/web/actions/CAction.php(75): XUploadAction->run()
+#2 /Users/mac/framework/web/CController.php(309): CAction->runWithParams(Array)
+#3 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(XUploadAction))
+#4 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#5 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#6 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#9 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(XUploadAction), Array)
+#10 /Users/mac/framework/web/CWebApplication.php(276): CController->run('upload')
+#11 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('files/upload')
+#12 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#13 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#14 {main}
+REQUEST_URI=/rdp/index.php/files/upload
+HTTP_REFERER=http://localhost/rdp/index.php/issues/4
+---
+2013/05/20 04:40:00 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'Could not upload file' in /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/extensions/xupload/actions/XUploadAction.php:281
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/extensions/xupload/actions/XUploadAction.php(191): XUploadAction->handleUploading()
+#1 /Users/mac/framework/web/actions/CAction.php(75): XUploadAction->run()
+#2 /Users/mac/framework/web/CController.php(309): CAction->runWithParams(Array)
+#3 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(XUploadAction))
+#4 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#5 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#6 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#9 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(XUploadAction), Array)
+#10 /Users/mac/framework/web/CWebApplication.php(276): CController->run('upload')
+#11 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('files/upload')
+#12 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#13 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#14 {main}
+REQUEST_URI=/rdp/index.php/files/upload
+HTTP_REFERER=http://localhost/rdp/index.php/issues/4
+---
+2013/05/20 04:50:18 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'Could not upload file' in /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/extensions/xupload/actions/XUploadAction.php:281
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/extensions/xupload/actions/XUploadAction.php(191): XUploadAction->handleUploading()
+#1 /Users/mac/framework/web/actions/CAction.php(75): XUploadAction->run()
+#2 /Users/mac/framework/web/CController.php(309): CAction->runWithParams(Array)
+#3 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(XUploadAction))
+#4 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#5 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#6 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#9 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(XUploadAction), Array)
+#10 /Users/mac/framework/web/CWebApplication.php(276): CController->run('upload')
+#11 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('files/upload')
+#12 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#13 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#14 {main}
+REQUEST_URI=/rdp/index.php/files/upload
+HTTP_REFERER=http://localhost/rdp/index.php/issues/4
+---
+2013/05/20 04:51:35 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'Could not upload file' in /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/extensions/xupload/actions/XUploadAction.php:281
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/extensions/xupload/actions/XUploadAction.php(191): XUploadAction->handleUploading()
+#1 /Users/mac/framework/web/actions/CAction.php(75): XUploadAction->run()
+#2 /Users/mac/framework/web/CController.php(309): CAction->runWithParams(Array)
+#3 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(XUploadAction))
+#4 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#5 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#6 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#9 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(XUploadAction), Array)
+#10 /Users/mac/framework/web/CWebApplication.php(276): CController->run('upload')
+#11 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('files/upload')
+#12 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#13 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#14 {main}
+REQUEST_URI=/rdp/index.php/files/upload
+HTTP_REFERER=http://localhost/rdp/index.php/issues/8
+---
+2013/05/22 17:38:53 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'Could not upload file' in /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/extensions/xupload/actions/XUploadAction.php:281
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/extensions/xupload/actions/XUploadAction.php(191): XUploadAction->handleUploading()
+#1 /Users/mac/framework/web/actions/CAction.php(75): XUploadAction->run()
+#2 /Users/mac/framework/web/CController.php(309): CAction->runWithParams(Array)
+#3 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(XUploadAction))
+#4 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#5 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#6 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#7 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#9 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(XUploadAction), Array)
+#10 /Users/mac/framework/web/CWebApplication.php(276): CController->run('upload')
+#11 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('files/upload')
+#12 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#13 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#14 {main}
+REQUEST_URI=/rdp/index.php/files/upload
+HTTP_REFERER=http://localhost/rdp/index.php/issues/4
+---
+2013/05/22 17:43:26 [error] [exception.CException] exception 'CException' with message 'XUpload must specify "model" and "attribute" or "name" property values.' in /Users/mac/framework/zii/widgets/jui/CJuiInputWidget.php:54
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/extensions/xupload/XUpload.php(90): CJuiInputWidget->resolveNameID()
+#1 /Users/mac/framework/web/CBaseController.php(174): XUpload->run()
+#2 /Applications/XAMPP/xamppfiles/htdocs/rdp/themes/System-Office-1/views/replies/_formajax.php(60): CBaseController->widget('xupload.XUpload', Array)
+#3 /Users/mac/framework/web/CBaseController.php(127): require('/Applications/X...')
+#4 /Users/mac/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/X...', Array, true)
+#5 /Users/mac/framework/web/CController.php(870): CBaseController->renderFile('/Applications/X...', Array, true)
+#6 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/RepliesController.php(106): CController->renderPartial('_formajax', Array, true, true)
+#7 /Users/mac/framework/web/actions/CInlineAction.php(50): RepliesController->actionCreate()
+#8 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#9 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#11 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#12 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#13 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#15 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /Users/mac/framework/web/CWebApplication.php(276): CController->run('create')
+#17 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('replies/create')
+#18 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#19 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#20 {main}
+REQUEST_URI=/rdp/index.php/replies/create?content_type=issues&content_type_id=4&_=1369244606079
+HTTP_REFERER=http://localhost/rdp/index.php/issues/4
+---
+2013/05/22 17:43:28 [error] [exception.CException] exception 'CException' with message 'XUpload must specify "model" and "attribute" or "name" property values.' in /Users/mac/framework/zii/widgets/jui/CJuiInputWidget.php:54
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/extensions/xupload/XUpload.php(90): CJuiInputWidget->resolveNameID()
+#1 /Users/mac/framework/web/CBaseController.php(174): XUpload->run()
+#2 /Applications/XAMPP/xamppfiles/htdocs/rdp/themes/System-Office-1/views/replies/_formajax.php(60): CBaseController->widget('xupload.XUpload', Array)
+#3 /Users/mac/framework/web/CBaseController.php(127): require('/Applications/X...')
+#4 /Users/mac/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/X...', Array, true)
+#5 /Users/mac/framework/web/CController.php(870): CBaseController->renderFile('/Applications/X...', Array, true)
+#6 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/RepliesController.php(106): CController->renderPartial('_formajax', Array, true, true)
+#7 /Users/mac/framework/web/actions/CInlineAction.php(50): RepliesController->actionCreate()
+#8 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#9 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#11 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#12 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#13 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#15 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /Users/mac/framework/web/CWebApplication.php(276): CController->run('create')
+#17 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('replies/create')
+#18 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#19 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#20 {main}
+REQUEST_URI=/rdp/index.php/replies/create?content_type=issues&content_type_id=4&_=1369244608721
+HTTP_REFERER=http://localhost/rdp/index.php/issues/4
+---
+2013/05/22 17:43:39 [error] [exception.CException] exception 'CException' with message 'XUpload must specify "model" and "attribute" or "name" property values.' in /Users/mac/framework/zii/widgets/jui/CJuiInputWidget.php:54
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/extensions/xupload/XUpload.php(90): CJuiInputWidget->resolveNameID()
+#1 /Users/mac/framework/web/CBaseController.php(174): XUpload->run()
+#2 /Applications/XAMPP/xamppfiles/htdocs/rdp/themes/System-Office-1/views/replies/_formajax.php(60): CBaseController->widget('xupload.XUpload', Array)
+#3 /Users/mac/framework/web/CBaseController.php(127): require('/Applications/X...')
+#4 /Users/mac/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/X...', Array, true)
+#5 /Users/mac/framework/web/CController.php(870): CBaseController->renderFile('/Applications/X...', Array, true)
+#6 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/RepliesController.php(106): CController->renderPartial('_formajax', Array, true, true)
+#7 /Users/mac/framework/web/actions/CInlineAction.php(50): RepliesController->actionCreate()
+#8 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#9 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#11 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#12 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#13 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#15 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /Users/mac/framework/web/CWebApplication.php(276): CController->run('create')
+#17 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('replies/create')
+#18 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#19 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#20 {main}
+REQUEST_URI=/rdp/index.php/replies/create?content_type=issues&content_type_id=4&_=1369244618790
+HTTP_REFERER=http://localhost/rdp/index.php/issues/4
+---
+2013/05/22 17:44:54 [error] [exception.CException] exception 'CException' with message 'XUpload must specify "model" and "attribute" or "name" property values.' in /Users/mac/framework/zii/widgets/jui/CJuiInputWidget.php:54
+Stack trace:
+#0 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/extensions/xupload/XUpload.php(90): CJuiInputWidget->resolveNameID()
+#1 /Users/mac/framework/web/CBaseController.php(174): XUpload->run()
+#2 /Applications/XAMPP/xamppfiles/htdocs/rdp/themes/System-Office-1/views/replies/_formajax.php(60): CBaseController->widget('xupload.XUpload', Array)
+#3 /Users/mac/framework/web/CBaseController.php(127): require('/Applications/X...')
+#4 /Users/mac/framework/web/CBaseController.php(96): CBaseController->renderInternal('/Applications/X...', Array, true)
+#5 /Users/mac/framework/web/CController.php(870): CBaseController->renderFile('/Applications/X...', Array, true)
+#6 /Applications/XAMPP/xamppfiles/htdocs/rdp/protected/controllers/RepliesController.php(106): CController->renderPartial('_formajax', Array, true, true)
+#7 /Users/mac/framework/web/actions/CInlineAction.php(50): RepliesController->actionCreate()
+#8 /Users/mac/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#9 /Users/mac/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 /Users/mac/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#11 /Users/mac/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#12 /Users/mac/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#13 /Users/mac/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 /Users/mac/framework/web/CController.php(292): CFilterChain->run()
+#15 /Users/mac/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /Users/mac/framework/web/CWebApplication.php(276): CController->run('create')
+#17 /Users/mac/framework/web/CWebApplication.php(135): CWebApplication->runController('replies/create')
+#18 /Users/mac/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#19 /Applications/XAMPP/xamppfiles/htdocs/rdp/index.php(11): CApplication->run()
+#20 {main}
+REQUEST_URI=/rdp/index.php/replies/create?content_type=issues&content_type_id=4&_=1369244694606
+HTTP_REFERER=http://localhost/rdp/index.php/issues/4
+---

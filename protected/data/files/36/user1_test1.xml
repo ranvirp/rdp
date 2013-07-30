@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Row>
+		<Col1>25</Col1>
+		<Col2>24</Col2>
+		<Col3>26</Col3>
+		<Col4>28</Col4>
+	</Row>
+<Row>
+		<Col1>20</Col1>
+		<Col2>277</Col2>
+		<Col3>262</Col3>
+		<Col4>285</Col4>
+	</Row>
+<Row>
+		<Col1>120</Col1>
+		<Col2>1277</Col2>
+		<Col3>1262</Col3>
+		<Col4>2850</Col4>
+	</Row>
+
+</Root>
